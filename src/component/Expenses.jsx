@@ -27,7 +27,7 @@ const [deleteId, setDeleteId] = useState(null);
 
     const fetchExpenses = () => {
 
-        fetch("http://localhost:5000/expenses", {
+        fetch("http:///api/expenses", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -58,7 +58,7 @@ const handleDelete = async () => {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/expense/${deleteId}`,
+            `http:///api/expense/${deleteId}`,
             {
                 method: "DELETE",
                 headers: {
@@ -125,7 +125,7 @@ const handleDelete = async () => {
         try {
 
             const response = await fetch(
-                `http://localhost:5000/expense/${editId}`,
+                `http:///api/expense/${editId}`,
                 {
                     method: "PUT",
                     headers: {

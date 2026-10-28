@@ -102,7 +102,7 @@ const [users, setUsers] = useState([]);
     };
     const fetchUsers = () => {
 
-    fetch("http://localhost:5000/users", {
+    fetch("http:///api/users", {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -187,7 +187,7 @@ useEffect(() => {
         userType,
     };
 
-    fetch("http://localhost:5000/add-user", {
+    fetch("http:///api/add-user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -241,7 +241,7 @@ const handleDeleteEmployee = (id) => {
         return;
     }
 
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`http:///api/user/${id}`, {
         method: "DELETE",
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -390,7 +390,7 @@ const handleUpdateSubmit = () => {
         userType: editUserType,
     };
 
-    fetch(`http://localhost:5000/user/${editUserId}`, {
+    fetch(`http:///api/user/${editUserId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

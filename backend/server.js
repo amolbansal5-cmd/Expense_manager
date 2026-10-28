@@ -20,6 +20,15 @@ const auth = require("./middleware/auth");
 
 app.use(cors());
 app.use(express.json());
+app.use((req, res, next) => {
+    if (req.url === "/api") {
+        req.url = "/";
+    } else if (req.url.startsWith("/api/")) {
+        req.url = req.url.slice(4);
+    }
+
+    next();
+});
 console.log("Mongo URI:", process.env.MONGO_URI);
 
 // MongoDB Connection

@@ -15,7 +15,7 @@ function Income() {
     // Fetch Income
     const fetchIncome = () => {
 
-        fetch("http://localhost:5000/income", {
+        fetch("http:///api/income", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -43,7 +43,7 @@ function Income() {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/add-income",
+                "http:///api/add-income",
                 {
                     method: "POST",
 

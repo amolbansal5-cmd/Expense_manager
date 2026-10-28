@@ -19,7 +19,7 @@ function Profile() {
 
     const fetchProfile = () => {
 
-        fetch("http://localhost:5000/profile", {
+        fetch("http:///api/profile", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -59,7 +59,7 @@ function Profile() {
 
         try {
 
-            const response = await fetch("http://localhost:5000/profile", {
+            const response = await fetch("http:///api/profile", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -96,7 +96,7 @@ function Profile() {
 
         try {
 
-            const response = await fetch("http://localhost:5000/change-password", {
+            const response = await fetch("http:///api/change-password", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

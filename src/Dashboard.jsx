@@ -29,7 +29,7 @@ function Dashboard() {
     const [errors, setErrors] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:5000/income", {
+        fetch("http:///api/income", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -40,7 +40,7 @@ function Dashboard() {
             })
             .catch(err => console.log(err));
 
-        fetch("http://localhost:5000/expenses", {
+            fetch("http:///api/expenses", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -94,7 +94,7 @@ function Dashboard() {
 
         try {
 
-            const response = await fetch("http://localhost:5000/add-expense", {
+            const response = await fetch("http:///api/add-expense", {
 
                 method: "POST",
 

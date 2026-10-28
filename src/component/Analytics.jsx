@@ -41,7 +41,7 @@ const COLORS = [
 
 useEffect(() => {
 
-    fetch("http://localhost:5000/expenses", {
+    fetch("http:///api/expenses", {
 
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -55,7 +55,7 @@ useEffect(() => {
 
 
 
-    fetch("http://localhost:5000/income", {
+    fetch("http:///api/income", {
 
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
