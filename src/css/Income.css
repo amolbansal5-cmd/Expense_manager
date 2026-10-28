@@ -1,0 +1,449 @@
+
+
+
+/* Main Content */
+
+.income-content{
+    padding:30px;
+}
+
+.income-page{
+    min-height:100vh;
+    background:#f1f5f9;
+    margin-left:var(--sidebar-width, 260px);
+    box-sizing:border-box;
+    transition:margin-left 0.3s ease; 
+}
+
+
+/* Header */
+
+.income-page .income-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #eff6ff
+    );
+
+    padding:30px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+
+
+.income-page .income-header h1{
+
+    margin:0;
+
+    font-size:38px;
+
+    color:#0f172a;
+
+}
+
+
+
+.income-page .income-header p{
+
+    margin-top:10px;
+
+    color:#64748b;
+
+    font-size:16px;
+
+}
+
+
+
+/* Add Button */
+
+.income-page .add-income-btn{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 20px rgba(37,99,235,.3);
+
+    transition:.3s;
+
+}
+
+
+
+.income-page .add-income-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(37,99,235,.4);
+
+}
+
+
+
+/* Income Summary Card */
+
+
+.income-page .income-card{
+
+    width:100%;
+
+    max-width:400px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #16a34a,
+        #22c55e
+    );
+
+    padding:35px;
+
+    border-radius:25px;
+
+    color:white;
+
+    box-shadow:
+    0 20px 35px rgba(22,163,74,.25);
+
+    margin-bottom:35px;
+
+    transition:.3s;
+
+}
+
+
+
+.income-page .income-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.income-page .income-card h3{
+
+    margin:0;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+
+
+.income-page .income-card h2{
+
+    margin-top:15px;
+
+    font-size:42px;
+
+    color:white;
+
+}
+
+
+
+/* Table */
+
+
+.income-page .income-table{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+}
+
+
+
+.income-page table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+.income-page thead{
+
+    background:#eff6ff;
+
+}
+
+
+
+.income-page th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#1e40af;
+
+    font-size:15px;
+
+}
+
+
+
+.income-page td{
+
+    padding:18px;
+
+    border-bottom:1px solid #e2e8f0;
+
+    color:#475569;
+
+}
+
+
+
+.income-page tbody tr{
+
+    transition:.3s;
+
+}
+
+
+
+.income-page tbody tr:hover{
+
+    background:#f8fafc;
+
+    transform:scale(1.01);
+
+}
+
+
+
+/* Modal Background */
+
+
+.income-page .income-modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(5px);
+
+    z-index:1000;
+
+}
+
+
+
+/* Modal */
+
+
+.income-page .income-modal{
+
+    width:420px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.3);
+
+    animation:popup .3s ease;
+
+}
+
+
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+.income-page .income-modal h2{
+
+    text-align:center;
+
+    color:#0f172a;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.income-page .income-modal input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+
+
+.income-page .income-modal input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+
+
+/* Modal Buttons */
+
+
+.income-page .income-modal-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.income-page .income-modal-buttons button{
+
+    flex:1;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+
+
+.income-page .income-modal-buttons button:first-child{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+
+
+.income-page .income-modal-buttons button:last-child{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+
+
+/* Mobile */
+
+@media(max-width:800px){
+
+    .income-page .income-header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        align-items:flex-start;
+
+    }
+
+
+    .income-page .income-card{
+
+        max-width:100%;
+
+    }
+
+
+}

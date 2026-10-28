@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Main container */
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+
+/* Left image section */
+.left {
+  width: calc(100% - 450px);
+  height: 100vh;
+
+  color: white;
+
+  padding: 100px 50px;
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Left heading */
+.left .title {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+/* Left paragraph */
+.left .subtitle {
+  font-size: 20px;
+  margin-top: 30px;
+  max-width: 450px;
+}
+
+
+/* Left button */
+.left .butt {
+  width: 180px;
+  height: 45px;
+
+  margin-top: 50px;
+
+  font-size: 18px;
+
+  background-color: transparent;
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 25px;
+
+  cursor: pointer;
+}
+
+
+.left .butt:hover {
+  background-color: white;
+  color: #3f5cbc;
+}
+
+
+/* Right signup box */
+.Apsp {
+  width: 450px;
+  height: 100vh;
+
+  padding: 27px;
+  padding-top: 50px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+  box-sizing: border-box;
+}
+
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+
+  color: #ecebec;
+  font-size: 28px;
+}
+
+
+/* Inputs */
+input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  border: 2px solid #ccc;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  box-sizing: border-box;
+}
+
+
+input:focus {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+
+/* Labels */
+label {
+  display: block;
+  padding: 5px;
+  color: azure;
+}
+
+
+/* Signup button */
+.Apsp button {
+
+  width: 100%;
+
+  padding: 12px;
+
+  margin-top: 15px;
+
+  background-color: #182e48;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.Apsp button:hover {
+  background-color: #7f879d;
+}
+
+
