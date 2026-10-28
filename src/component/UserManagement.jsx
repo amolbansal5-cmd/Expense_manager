@@ -102,7 +102,7 @@ const [users, setUsers] = useState([]);
     };
     const fetchUsers = () => {
 
-    fetch("http:///api/users", {
+    fetch("/api/users", {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

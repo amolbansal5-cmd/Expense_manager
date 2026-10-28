@@ -8,7 +8,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const User = require("./model/User");
+const User = require("./model/user");
 const Expense = require("./model/Expense");
 const bcrypt = require("bcrypt");
 
