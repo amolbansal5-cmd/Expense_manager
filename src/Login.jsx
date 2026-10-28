@@ -35,7 +35,7 @@ function Login() {
     try{
 
       const response = await fetch(
-        "http:///api/login",
+        "http://api/login",
         {
           method:"POST",
 

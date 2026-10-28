@@ -36,7 +36,7 @@ const validateEmail = (email) => {
 
   try {
 
-    const response = await fetch("http:///api/signup", {
+    const response = await fetch("/api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
