@@ -14,6 +14,8 @@ import {
     ResponsiveContainer
 } from "recharts";
 
+const API_URL = "https://expense-manager-h6zo.onrender.com";
+
 function Dashboard() {
     const [expenses, setExpenses] = useState([]);
     const [income, setIncome] = useState([]);
@@ -28,30 +30,36 @@ function Dashboard() {
 
     const [errors, setErrors] = useState({});
 
-    useEffect(() => {
-        fetch("http:///api/income", {
+    const fetchData = () => {
+
+        fetch(`${API_URL}/income`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
         })
             .then(res => res.json())
             .then(data => {
-                setIncome(data);
+                setIncome(Array.isArray(data) ? data : []);
             })
             .catch(err => console.log(err));
 
-            fetch("http:///api/expenses", {
+        fetch(`${API_URL}/expenses`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
         })
             .then(res => res.json())
             .then(data => {
-                setExpenses(data);
+                setExpenses(Array.isArray(data) ? data : []);
             })
             .catch(error => {
                 console.log(error);
             });
+
+    };
+
+    useEffect(() => {
+        fetchData();
     }, []);
 
     const validateForm = () => {
@@ -94,7 +102,7 @@ function Dashboard() {
 
         try {
 
-            const response = await fetch("http:///api/add-expense", {
+            const response = await fetch(`${API_URL}/add-expense`, {
 
                 method: "POST",
 
@@ -127,6 +135,8 @@ function Dashboard() {
                 setErrors({});
 
                 setShowModal(false);
+
+                fetchData();
 
             } else {
 

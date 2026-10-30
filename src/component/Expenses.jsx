@@ -27,7 +27,7 @@ const [deleteId, setDeleteId] = useState(null);
 
     const fetchExpenses = () => {
 
-        fetch("http:///api/expenses", {
+     fetch("https://expense-manager-h6zo.onrender.com/expenses", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -56,16 +56,15 @@ const [deleteId, setDeleteId] = useState(null);
 const handleDelete = async () => {
 
     try {
-
-        const response = await fetch(
-            `http:///api/expense/${deleteId}`,
-            {
-                method: "DELETE",
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-            }
-        );
+const response = await fetch(
+    `https://expense-manager-h6zo.onrender.com/expense/${deleteId}`,
+    {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+    }
+);
 
         const data = await response.json();
 
@@ -124,24 +123,23 @@ const handleDelete = async () => {
 
         try {
 
-            const response = await fetch(
-                `http:///api/expense/${editId}`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                    body: JSON.stringify({
-                        title,
-                        category,
-                        amount,
-                        payment,
-                        date,
-                    }),
-                }
-            );
-
+          const response = await fetch(
+    `https://expense-manager-h6zo.onrender.com/expense/${editId}`,
+    {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+            title,
+            category,
+            amount,
+            payment,
+            date,
+        }),
+    }
+);
             const data = await response.json();
 
             if (response.ok) {

@@ -36,7 +36,7 @@ const validateEmail = (email) => {
 
   try {
 
-    const response = await fetch("/api/signup", {
+  const response = await fetch("https://expense-manager-h6zo.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

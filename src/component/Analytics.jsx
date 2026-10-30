@@ -41,33 +41,31 @@ const COLORS = [
 
 useEffect(() => {
 
-    fetch("http:///api/expenses", {
-
+    fetch("https://expense-manager-h6zo.onrender.com/expenses", {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
         }
-
     })
     .then(res => res.json())
     .then(data => {
-        setExpenses(data);
-    });
+        setExpenses(Array.isArray(data) ? data : []);
+    })
+    .catch(err => console.log(err));
 
-
-
-    fetch("http:///api/income", {
-
+    fetch("https://expense-manager-h6zo.onrender.com/income", {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
         }
-
     })
     .then(res => res.json())
     .then(data => {
-        setIncome(data);
-    });
+        setIncome(Array.isArray(data) ? data : []);
+    })
+    .catch(err => console.log(err));
 
 }, []);
+
+
 console.log(expenses);
 console.log(income);
 const monthlyExpenses = [

@@ -15,7 +15,8 @@ function Income() {
     // Fetch Income
     const fetchIncome = () => {
 
-        fetch("http:///api/income", {
+       // fetchIncome ke andar
+fetch("https://expense-manager-h6zo.onrender.com/income", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -42,8 +43,9 @@ function Income() {
 
         try {
 
-            const response = await fetch(
-                "http:///api/add-income",
+       // handleAddIncome ke andar
+const response = await fetch(
+    "https://expense-manager-h6zo.onrender.com/add-income",
                 {
                     method: "POST",
 

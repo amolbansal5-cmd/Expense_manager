@@ -19,11 +19,11 @@ function Profile() {
 
     const fetchProfile = () => {
 
-        fetch("http:///api/profile", {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-        })
+      fetch("https://expense-manager-h6zo.onrender.com/profile", {
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+})
             .then((res) => res.json())
             .then((data) => {
                 setName(data.name);
@@ -58,15 +58,14 @@ function Profile() {
         setLoadingProfile(true);
 
         try {
-
-            const response = await fetch("http:///api/profile", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-                body: JSON.stringify({ name, email }),
-            });
+const response = await fetch("https://expense-manager-h6zo.onrender.com/profile", {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify({ name, email }),
+});
 
             const data = await response.json();
 
@@ -95,15 +94,14 @@ function Profile() {
         setLoadingPassword(true);
 
         try {
-
-            const response = await fetch("http:///api/change-password", {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-                body: JSON.stringify({ currentPassword, newPassword }),
-            });
+const response = await fetch("https://expense-manager-h6zo.onrender.com/change-password", {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify({ currentPassword, newPassword }),
+});
 
             const data = await response.json();
 

@@ -100,16 +100,16 @@ const [users, setUsers] = useState([]);
     const handleStateChange = (e) => {
         setState(e.target.value);
     };
-    const fetchUsers = () => {
+   const fetchUsers = () => {
 
-    fetch("F/api/users", {
+    fetch("https://expense-manager-h6zo.onrender.com/users", {
         headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
     })
         .then((res) => res.json())
         .then((data) => {
-            setUsers(data);
+            setUsers(Array.isArray(data) ? data : []);
         })
         .catch((error) => {
             console.log(error);
@@ -117,7 +117,6 @@ const [users, setUsers] = useState([]);
         });
 
 };
-
 
 useEffect(() => {
     fetchUsers();
@@ -187,7 +186,7 @@ useEffect(() => {
         userType,
     };
 
-    fetch("http:///api/add-user", {
+    fetch("https://expense-manager-h6zo.onrender.com/add-user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -241,12 +240,12 @@ const handleDeleteEmployee = (id) => {
         return;
     }
 
-    fetch(`http:///api/user/${id}`, {
-        method: "DELETE",
-        headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-    })
+   fetch(`https://expense-manager-h6zo.onrender.com/user/${id}`, {
+    method: "DELETE",
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+})
         .then((res) => {
             if (!res.ok) {
                 return res.json().then((data) => {
@@ -390,14 +389,14 @@ const handleUpdateSubmit = () => {
         userType: editUserType,
     };
 
-    fetch(`http:///api/user/${editUserId}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify(updatedUser),
-    })
+   fetch(`https://expense-manager-h6zo.onrender.com/user/${editUserId}`, {
+    method: "PUT",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    body: JSON.stringify(updatedUser),
+})
         .then((res) => {
             if (!res.ok) {
                 return res.json().then((data) => {
